@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Page from './page';
 
-class index extends Component {
+class Results extends Component {
     render() {
         return (
             <div>

@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
+// components 
+import About from './components/about';
+import Details from './components/details';
+import Results from './components/results';
 
 
 const App = () => {
     return (
-        <div>
-            App
-        </div>
-
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/details/:id" component={Details} />
+                    <Route path="/results" component={Results} />
+                    <Route path="/about" component={About} />
+                    <Redirect from="/" to="/results" />
+                </Switch>
+            </BrowserRouter>
     );
 };
 
