@@ -13,14 +13,14 @@ export const fetchPokemonsResouces= async (name)=>{
     {
         fetch('https://pokeapi.co/api/v2/pokemon/?limit=964')
         .then(response=>response.json())
-        .then(data=>{
-            return Promise.all(data.results.map(async pokemon=>{
+        .then(async data=>{
+            return await Promise.all(data.results.map(async pokemon=>{
                 let pokemonDetails = await getPokemonByName(pokemon.name); 
                 return pokemonDetails
             }))
         })
         .then(data=>{
-            resolve(data);
+            return resolve(data)
         })
     })
 }
