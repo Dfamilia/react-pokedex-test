@@ -2,7 +2,14 @@ import React from 'react';
 
 const Page = (props) => {
     // Navbar props
-    const { goTo,} = props;
+    const { 
+        goTo,
+        onChangeText,
+    } = props;
+
+    onChangeThis (e){
+        onChangeText(e.target.value);
+    }
 
     // Navbar state
     const state = {
@@ -19,7 +26,7 @@ const Page = (props) => {
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={onChangeThis(event)}/>
                     <button className="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
                 </form>
             </div>

@@ -29,27 +29,20 @@ class Results extends Component {
         exeFetch()
     }
 
-
-    onChangeText(text) {
-        this.setState({ text });
-
-        this.props.results(text);
-    }
-
     render() {
         // redux to props
         const {
             addService,
             results,
-            findResults,
         } = this.props;
 
-        console.log("state", this.state.pokemonList)
-        addService(this.state.pokemonList)
+        // console.log("state", this.state.pokemonList)
+        // addService(this.state.pokemonList)
+        // 
         return (
             <Fragment>
                 <Navbar />
-                <Page results={this.results} />
+                <Page results={this.state.pokemonList} />
             </Fragment>
         )
     }
@@ -61,7 +54,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     addService,
-    findResults,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);

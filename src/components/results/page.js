@@ -1,15 +1,19 @@
 import React, { Fragment } from 'react';
 
 const Page = (props) =>{
-    console.log(props.results)
+    // console.log(props.results)
+    // const { results }= props;
     return (
-        <div>
-            Results
-            {
-                
-            }
-
-        </div>
+        <Fragment>
+            
+            {/* {results ?
+                results.map(pokemon => (
+                    // bootstrap Card
+                ));
+                :
+                "None"
+            } */}
+        </Fragment>
     );
 }
 

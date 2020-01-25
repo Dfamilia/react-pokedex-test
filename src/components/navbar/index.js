@@ -1,8 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connet } from 'react-redux';
 import Page from './page';
 
 class Navbar extends Component {
+
+    
+    onChangeText(text) {
+        this.props.findResults(text);
+    }
+
     render() {
         const { history }= this.props;
         const goTo=(path)=>{
@@ -10,11 +17,14 @@ class Navbar extends Component {
         }
 
         return (
-            <Fragment>
-                <Page goTo={goTo}/>
-            </Fragment>
+            <div>
+                <Page goTo={goTo} onChangeText={onChangeText} />
+            </div>
         )
     }
 }
 
-export default withRouter(Navbar);
+const mapDispatchToProps = {
+    findResults,
+}
+export default withRouter(connect(mapDispatchToProps)(Navbar));
