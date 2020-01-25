@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Page = (props) => {
+    // Navbar props
     const { goTo,} = props;
+
+    // Navbar state
     const state = {
         text: ''
     }
@@ -12,7 +15,7 @@ const Page = (props) => {
                 <span className="navbar-brand" style={{cursor:'pointer'}} onClick={()=>{goTo('/resuts')}}>Home</span>
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item active">
-                        <span className="nav-link" style={{cursor:'pointer'}} onClick={()=>{goTo('/about')}}>About <span class="sr-only">(current)</span></span>
+                        <span className="nav-link" style={{cursor:'pointer'}} onClick={()=>{goTo('/about')}}>About <span className="sr-only">(current)</span></span>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Page from './page';
 import Navbar from '../navbar';
 
 class About extends Component {
@@ -6,9 +7,7 @@ class About extends Component {
         return (
             <Fragment>
                 <Navbar />
-                <div>
-                    ABOUT
-                </div>
+                <Page />
             </Fragment>
         )
     }

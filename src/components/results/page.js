@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 
 const Page=()=> {
     return (
-        <Fragment>
+        <div>
             Results
-        </Fragment>
+        </div>
     );
 }
 
