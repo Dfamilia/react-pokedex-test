@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Page from './page';
+import Navbar from '../navbar';
 
 class Results extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
+                <Navbar />
                 <Page />
-            </div>
+            </Fragment>
         )
     }
 }

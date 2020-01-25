@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 import Page from './page';
 
 class Navbar extends Component {
     render() {
+        const { history }= this.props;
+        const goTo=(path)=>{
+            history.push(path);
+        }
+
         return (
-            <div>
-                <Page />
-            </div>
+            <Fragment>
+                <Page goTo={goTo}/>
+            </Fragment>
         )
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
