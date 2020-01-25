@@ -13,9 +13,9 @@ const App = () => {
             <BrowserRouter>
                 <Switch>
                     <Route path="/details/:id" component={Details} />
-                    <Route path="/results" component={Results} />
+                    <Route path="/home" component={Results} />
                     <Route path="/about" component={About} />
-                    <Redirect from="/" to="/results" />
+                    <Redirect from="/" to="/home" />
                 </Switch>
             </BrowserRouter>
     );

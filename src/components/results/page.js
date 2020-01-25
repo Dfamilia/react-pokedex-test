@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
 
-const Page=()=> {
+const Page = () =>{
+
     return (
         <div>
             Results
+            {
+                
+            }
+
         </div>
     );
 }
