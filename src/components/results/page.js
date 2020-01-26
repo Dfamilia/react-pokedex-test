@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 const Page = (props) =>{
     // console.log(props.results)
     // const { results }= props;
+    console.log(props.results)
     return (
         <Fragment>
             

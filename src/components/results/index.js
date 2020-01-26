@@ -8,31 +8,33 @@ import { connect } from 'react-redux';
 
 
 class Results extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
-            pokemonList: '',
-            isLoading: false,
-        }
-    }
-    componentDidMount() {
+    //     this.state = {
+    //         pokemonList: '',
+    //         isLoading: false,
+    //     }
+    // }
+
+    //FIXME:  this method try to use a Pokemon resource (state: failure)
+    // componentDidMount() {
 
 
-        // send data from /Service to Redux
-        let current = this;
-        async function exeFetch() {
-            let res = await fetchPokemonsResouces();
-            await current.setState({ pokemonList: res })
+    //     // send data from /Service to Redux
+    //     let current = this;
+    //     async function exeFetch() {
+    //         let res = await fetchPokemonsResouces();
+    //         await current.setState({ pokemonList: res })
 
-        }
-        exeFetch()
-    }
+    //     }
+    //     exeFetch()
+    // }
 
     render() {
         // redux to props
         const {
-            addService,
+            // addService,
             results,
         } = this.props;
 
@@ -42,18 +44,20 @@ class Results extends Component {
         return (
             <Fragment>
                 <Navbar />
-                <Page results={this.state.pokemonList} />
+                <Page results={results} />
             </Fragment>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    results: state.results
-})
-
-const mapDispatchToProps = {
-    addService,
+const mapStateToProps = state => {
+    return {
+        results: state.results
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Results);
+// const mapDispatchToProps = {
+//     addService,
+// }
+
+export default connect(mapStateToProps)(Results);

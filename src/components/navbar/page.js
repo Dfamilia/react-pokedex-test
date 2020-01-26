@@ -7,9 +7,12 @@ const Page = (props) => {
         onChangeText,
     } = props;
 
-    onChangeThis (e){
+    const onChangeThis=(e)=> {
+        e.preventDefault();
         onChangeText(e.target.value);
+        // console.log(e.target.value)
     }
+
 
     // Navbar state
     const state = {
@@ -25,8 +28,8 @@ const Page = (props) => {
                         <span className="nav-link" style={{cursor:'pointer'}} onClick={()=>{goTo('/about')}}>About <span className="sr-only">(current)</span></span>
                     </li>
                 </ul>
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={onChangeThis(event)}/>
+                <form className="form-inline my-2 my-lg-0" onSubmit={(e)=>{e.preventDefault()}}>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{onChangeThis(e)}}/>
                     <button className="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
                 </form>
             </div>

@@ -1,16 +1,12 @@
-function reducer(state=[], {type, payload}){
+const defaultState = []
+
+function reducer(state=defaultState, {type, payload}){
     switch(type){
         case 'addSerice': {
             return [
                 ...state,
                 payload,
             ]
-        }
-
-        case 'findResults': {
-            const regex = new RegExp(`^${payload}`, 'i');
-
-            return state.filter(n => regex.test(n.title));
         }
 
         default:
