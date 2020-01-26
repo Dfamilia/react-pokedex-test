@@ -25,18 +25,16 @@ const defaultState = [
     },
 ];
 
-function reducer(state = defaultState, { type, payload }) {
-    switch (type) {
-
-        case 'findResults': {
-                const regex = new RegExp(`^${payload}`, 'i');
-
-                return state.filter(n => regex.test(n.title));
+const reducer =(state= defaultState, {type, payload})=>{
+    switch(type){
+        case 'findCurrentItem':{
+            
+            return state.find(e=> e.id === payload);
         }
 
         default:
             return state;
     }
-}
 
+}
 export default reducer;

@@ -12,15 +12,10 @@ const Page = (props) => {
         onChangeText(e.target.value);
         // console.log(e.target.value)
     }
-
-
-    // Navbar state
-    const state = {
-        text: ''
-    }
+    
     return (
 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <span className="navbar-brand" style={{cursor:'pointer'}} onClick={()=>{goTo('/resuts')}}>Home</span>
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -29,8 +24,7 @@ const Page = (props) => {
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={(e)=>{e.preventDefault()}}>
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{onChangeThis(e)}}/>
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+                    <input className="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{onChangeThis(e)}}/>
                 </form>
             </div>
         </nav>

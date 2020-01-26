@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import Page from './page';
 import Navbar from '../navbar';
-import { fetchPokemonsResouces } from '../../services/pokemonsData';
-import addService from '../../redux/actions/addService';
-import findResults from '../../redux/actions/findResults';
+// import { fetchPokemonsResouces } from '../../services/pokemonsData';
+// import addService from '../../redux/actions/addService';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 
 
 class Results extends Component {
@@ -31,6 +32,11 @@ class Results extends Component {
     //     exeFetch()
     // }
 
+    // path's handler
+    goTo=(path)=>{
+        this.props.history.push(path);
+    }
+
     render() {
         // redux to props
         const {
@@ -44,7 +50,7 @@ class Results extends Component {
         return (
             <Fragment>
                 <Navbar />
-                <Page results={results} />
+                <Page results={results} goTo={this.goTo} />
             </Fragment>
         )
     }
@@ -60,4 +66,4 @@ const mapStateToProps = state => {
 //     addService,
 // }
 
-export default connect(mapStateToProps)(Results);
+export default withRouter(connect(mapStateToProps)(Results));
