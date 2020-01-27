@@ -5,6 +5,7 @@ const Page = (props) => {
     const { 
         goTo,
         onChangeText,
+
     } = props;
 
     const onChangeThis=(e)=> {
@@ -24,7 +25,7 @@ const Page = (props) => {
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={(e)=>{e.preventDefault()}}>
-                    <input className="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{onChangeThis(e)}}/>
+                    <input className="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search"  onChange={(e)=>{onChangeThis(e)}} />
                 </form>
             </div>
         </nav>

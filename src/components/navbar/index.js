@@ -6,22 +6,31 @@ import Page from './page';
 
 
 class Navbar extends Component {
+
     
-    // each text's change makes an action
-    onChangeText= (text) => {
-        this.props.findResults(text);
+
+    // // each text's change makes an action
+    // onChangeText= (text) => {
+    //     // this.props.findResults(text);
+    // }
+
+    // each text's change this component state
+    // onChangeText = text =>{
+
+    //     this.setState({text})
+    // }
+
+    
+
+    goTo=(path)=>{
+        this.props.history.push(path);
     }
 
     render() {
-        const { history }= this.props;
-
-        const goTo=(path)=>{
-            history.push(path);
-        }
-
+ 
         return (
             <div>
-                <Page goTo={goTo} onChangeText={this.onChangeText} />
+                <Page goTo={this.goTo}   />
             </div>
         )
     }

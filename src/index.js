@@ -16,9 +16,9 @@ const App = () => {
             <BrowserRouter>
                 <Switch>
                     <Route path="/details/:id" component={Details} />
-                    <Route path="/home" component={Results} />
+                    <Route path="/home/:search?" component={Results} />
                     <Route path="/about" component={About} />
-                    <Redirect from="/" to="/home" />
+                    <Redirect from="/" to="/home/:search?" />
                 </Switch>
             </BrowserRouter>
         </Provider>
